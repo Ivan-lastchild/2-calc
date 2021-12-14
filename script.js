@@ -1,40 +1,36 @@
-let takeAction,
-    firstNum,
-    secondNum;
-
-let data = function() {
+let main = function(takeAction, firstNum, secondNum) {
     takeAction = prompt('Выберите действие');
     firstNum = +prompt('Введите первое число');
     secondNum = +prompt('Введите второе число');
 
     if(takeAction == "+") {
-        sum (firstNum, secondNum);
+        console.log(`${firstNum} ${takeAction} ${secondNum} = ${sum(firstNum, secondNum)}`);
     } else if (takeAction == "-") {
-        sub (firstNum, secondNum);
+        console.log(`${firstNum} ${takeAction} ${secondNum} = ${sub(firstNum, secondNum)}`);
     } else if (takeAction == "*") {
-        mult (firstNum, secondNum);
+        console.log(`${firstNum} ${takeAction} ${secondNum} = ${mult(firstNum, secondNum)}`);
     } else if(takeAction == "/"){
-        div (firstNum, secondNum);
+        console.log(`${firstNum} ${takeAction} ${secondNum} = ${div(firstNum, secondNum)}`);
     } else {
         console.log("выберите действие среди +,-,*,/");
     }
 };
 
-data();
+main();
 
-
-function sum (){
-    console.log(`${firstNum} ${takeAction} ${secondNum} = ${firstNum + secondNum}`);
+function sum (a, b){
+    return a + b;
 }
 
-function sub (){
-    console.log(`${firstNum} ${takeAction} ${secondNum} = ${firstNum - secondNum}`);
+function sub (a, b){
+    return a - b ;
 }
 
-function mult (){
-    console.log(`${firstNum} ${takeAction} ${secondNum} = ${firstNum * secondNum}`);
+function mult (a, b){
+    return a * b;
 }
 
-function div (){
-    console.log(`${firstNum} ${takeAction} ${secondNum} = ${firstNum / secondNum}`);
+function div (a, b){
+    return a / b;
 }
+

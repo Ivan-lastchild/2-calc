@@ -4,19 +4,23 @@ let main = function(takeAction, firstNum, secondNum) {
     secondNum = +prompt('Введите второе число');
 
     if(takeAction == "+") {
-        console.log(`${firstNum} ${takeAction} ${secondNum} = ${sum(firstNum, secondNum)}`);
+        showResult(sum(firstNum, secondNum), firstNum, secondNum, takeAction);
     } else if (takeAction == "-") {
-        console.log(`${firstNum} ${takeAction} ${secondNum} = ${sub(firstNum, secondNum)}`);
+        showResult(sub(firstNum, secondNum), firstNum, secondNum, takeAction);
     } else if (takeAction == "*") {
-        console.log(`${firstNum} ${takeAction} ${secondNum} = ${mult(firstNum, secondNum)}`);
+        showResult(mult(firstNum, secondNum), firstNum, secondNum, takeAction);
     } else if(takeAction == "/"){
-        console.log(`${firstNum} ${takeAction} ${secondNum} = ${div(firstNum, secondNum)}`);
+        showResult(div(firstNum, secondNum), firstNum, secondNum, takeAction);
     } else {
         console.log("выберите действие среди +,-,*,/");
     }
 };
 
 main();
+
+function showResult(fun, a, b, c){
+    console.log(`${a} ${c} ${b} = ${fun}`);
+}
 
 function sum (a, b){
     return a + b;
